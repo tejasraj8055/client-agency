@@ -11,6 +11,9 @@ import agencyCrudRouter from './routes/crud/agencyCrud.js';
 app
   .use(express.json())
   .use(logger)
+  .get('/', (req, res, next) => {
+    res.status(200).send('Hello World');
+  })
   .use('/auth', authRouter)
   .use('/clientAgency', clientAgencyAPIRouter)
   .use('/client', clientCrudRouter)
