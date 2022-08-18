@@ -12,7 +12,7 @@ app
   .use(express.json())
   .use(logger)
   .get('/', (req, res, next) => {
-    res.status(200).send('Hello World');
+    res.status(200).send('Kindly follow API documentation "https://documenter.getpostman.com/view/22664905/VUjLMT24" ');
   })
   .use('/auth', authRouter)
   .use('/clientAgency', clientAgencyAPIRouter)
