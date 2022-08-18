@@ -12,7 +12,10 @@ app
   .use(express.json())
   .use(logger)
   .get('/', (req, res, next) => {
-    res.status(200).send('Kindly follow API documentation "https://documenter.getpostman.com/view/22664905/VUjLMT24" ');
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(
+      '<div><h1>REST API</h1><br><p>A simple REST API app to demonstrate coding standards, designing REST APIs, error handling, authentication using JWT, security, deployment, etc.</p><br><p>Tech: NodeJS, ExpressJS, MongoDB Atlas, Heroku <br><br>Packages : bcryptjs, dayjs, dotenv, express, http-errors, jsonwebtoken, mongoose.</p><br><br><form action="https://documenter.getpostman.com/view/22664905/VUjLMT24"><input type="submit" value="Documentation" /></form></div>'
+    );
   })
   .use('/auth', authRouter)
   .use('/clientAgency', clientAgencyAPIRouter)
